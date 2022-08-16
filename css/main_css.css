@@ -75,3 +75,11 @@ span{
     background-image: url("../images/depositphotos_54942407-stock-photo-watermelon.jpg");
     background-size: cover;
 }
+
+
+@media (max-width: 400px) {
+    .grparent{
+        width: 400px;
+        height: 300px;
+    }
+}
