@@ -13,14 +13,14 @@ boxes.forEach(function(el ,ind){
             click = ind
         }
         else{
-            // boxes.forEach(function(ele){
-            //     ele.style.pointerEvents = "none"
-            // })
             this.classList.add("clicked")
             if(backs[ind].getAttribute("fruit") == temp){
                 temp = ""
             }
             else{
+                boxes.forEach(function(ele){
+                    ele.style.pointerEvents = "none"
+                })
                 container[ind].classList.add("return")
                 container[click].classList.add("return")
                 setTimeout(() => {
@@ -36,7 +36,11 @@ boxes.forEach(function(el ,ind){
                     container[click].classList.remove("return")
                     container[ind].style.transformStyle = "flat"
                     container[click].style.transformStyle = "flat"
-                }, 1500);
+                    boxes.forEach(function(ele){
+                        ele.style.pointerEvents = "auto"
+                    })
+                }, 1000);
+
             }
         }
     }
